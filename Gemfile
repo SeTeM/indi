@@ -25,7 +25,7 @@ gem 'turbolinks'
 
 gem 'actionform', github: 'rails/actionform', require: 'action_form'
 gem 'active_model_serializers'
-gem 'sorcery'
+gem 'sorcery', github: 'NoamB/sorcery'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
