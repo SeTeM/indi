@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resource :index, only: [:index]
 
   namespace :api do
-    resources :users, only: [:index]
+    resources :users, only: [:index, :create]
     resources :sessions, only: [:create] do
       delete :destroy, on: :collection
     end
