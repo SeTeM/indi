@@ -23,7 +23,6 @@ gem 'turbolinks'
 # bundle exec rake doc:rails generates the API under doc/api.
 # gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'actionform', github: 'rails/actionform', require: 'action_form'
 gem 'active_model_serializers'
 gem 'sorcery', github: 'NoamB/sorcery'
 

@@ -7,13 +7,6 @@ GIT
       oauth (~> 0.4, >= 0.4.4)
       oauth2 (>= 0.8.0)
 
-GIT
-  remote: git://github.com/rails/actionform.git
-  revision: 4a858fecf4c2e0fea1716741cdcf91f9d7a0b719
-  specs:
-    actionform (0.0.1)
-      rails (~> 4.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -219,7 +212,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actionform!
   active_model_serializers
   bcrypt
   byebug

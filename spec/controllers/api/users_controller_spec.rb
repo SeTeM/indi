@@ -8,10 +8,7 @@ RSpec.describe API::UsersController, type: :controller do
       subject { get :index, token: user.api_token }
 
       it { is_expected.to be_success }
-
-      it "returns users" do
-        expect(json).to be
-      end
+      it { expect(json[:users]).to be }
     end
 
     context "when logged out" do
