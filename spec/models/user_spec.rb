@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  describe "#init_api_token" do
+  describe "#generate_api_token" do
     let(:user) { build(:user) }
 
     it "assigns api_token on create" do

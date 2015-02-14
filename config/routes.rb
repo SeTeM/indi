@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :users, only: [:index]
-    resources :sessions, only: [:create]
+    resources :sessions, only: [:create] do
+      delete :destroy, on: :collection
+    end
   end
 end
