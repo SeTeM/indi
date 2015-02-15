@@ -2,7 +2,7 @@
 # The default is nothing which will include only core features (password encryption, login/logout).
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging, :external
-Rails.application.config.sorcery.submodules = [:remember_me, :user_activation, :external]
+Rails.application.config.sorcery.submodules = [:remember_me]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
@@ -76,7 +76,7 @@ Rails.application.config.sorcery.configure do |config|
   # What providers are supported by this app, i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid, :salesforce] .
   # Default: `[]`
   #
-  config.external_providers = [:jira, :github]
+  # config.external_providers = [:jira, :github, :google]
 
 
   # You can change it by your local ca_file. i.e. '/etc/pki/tls/certs/ca-bundle.crt'
@@ -123,14 +123,14 @@ Rails.application.config.sorcery.configure do |config|
   # config.facebook.access_permissions = ["email", "publish_stream"]
   # config.facebook.display = "page"
   #
-  config.github.key = "f94a411c3f9b3ba67369"
-  config.github.secret = "3ae233bb209037c3e478a35570c879f172a84a89"
-  config.github.callback_url = "http://0.0.0.0:3000/oauth/callback/github"
-  config.github.user_info_mapping = { email: "name"}
+  # config.github.key = "f94a411c3f9b3ba67369"
+  # config.github.secret = "3ae233bb209037c3e478a35570c879f172a84a89"
+  # config.github.callback_url = "http://0.0.0.0:3000/oauth/callback/github"
+  # config.github.user_info_mapping = { email: "name"}
   #
-  # config.google.key = ""
-  # config.google.secret = ""
-  # config.google.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=google"
+  # config.google.key = "469201966549-l3gpdoivov7tjp66v2uqd2chonql8gj8.apps.googleusercontent.com"
+  # config.google.secret = "vR6IAnYRYGgTDtrEDoB1v9qS"
+  # config.google.callback_url = "http://localhost:3000/oauth/callback/google"
   # config.google.user_info_mapping = {:email => "email", :username => "name"}
   #
   # config.vk.key = ""
@@ -290,7 +290,7 @@ Rails.application.config.sorcery.configure do |config|
     # manually handle how and when email is sent.
     # Default: `false`
     #
-    user.activation_mailer_disabled = true
+    # user.activation_mailer_disabled = true
 
 
     # activation needed email method on your mailer class.
@@ -436,7 +436,7 @@ Rails.application.config.sorcery.configure do |config|
     # Class which holds the various external provider data for this user.
     # Default: `nil`
     #
-    user.authentications_class = "Authentication"
+    # user.authentications_class = "Authentication"
 
 
     # User's identifier in authentications class.

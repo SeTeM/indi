@@ -5,8 +5,6 @@ class User < ActiveRecord::Base
 
   validates :email, :login, :api_token, uniqueness: true
 
-  has_many :authentications
-
   def regenerate_api_token!
     init_api_token
     save
