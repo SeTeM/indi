@@ -1,4 +1,4 @@
-module ControllerMacros
+module JsonMacros
   def json
     parsed_body.with_indifferent_access
   end
@@ -21,5 +21,5 @@ module ControllerMacros
 end
 
 RSpec.configure do |config|
-  config.include ControllerMacros, type: :controller
+  config.include JsonMacros, type: :controller
 end

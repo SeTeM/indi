@@ -24,12 +24,11 @@ gem 'turbolinks'
 # gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'active_model_serializers'
-gem 'sorcery', github: 'NoamB/sorcery'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt'
+# gem 'bcrypt'
 
 gem 'puma'
 

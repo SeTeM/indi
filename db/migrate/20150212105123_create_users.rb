@@ -4,8 +4,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :login,            null: false
       t.string :email,            null: false
-      t.string :crypted_password
-      t.string :salt
       t.string :about
       t.date :hired_at
       t.string :api_token

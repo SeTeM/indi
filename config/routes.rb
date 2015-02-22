@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resource :index, only: [:index]
 
-  resource :oauth, only: [] do
+  resource :auth, only: [] do
     get :callback, on: :member
   end
 

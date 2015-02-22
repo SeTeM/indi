@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe OauthController, type: :controller do
+RSpec.describe AuthController, type: :controller do
   # describe "GET index" do
   #   subject { get :index }
   #   let(:user) { create :user }
