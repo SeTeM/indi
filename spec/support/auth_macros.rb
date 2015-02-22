@@ -1,6 +1,6 @@
 module AuthMacros
   def login_user(user)
-    request.cookies[:api_token] = user.api_token
+    request.cookies[:token] = user.token
   end
 end
 

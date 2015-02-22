@@ -25,7 +25,7 @@ class ExternalUserService
   def create_provider
     @provider = Provider.create!(
       user_id: user.id,
-      provider: auth_hash[:provider],
+      title: auth_hash[:provider],
       uid: auth_hash[:uid],
       raw: auth_hash
     )

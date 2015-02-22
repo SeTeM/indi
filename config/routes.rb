@@ -3,9 +3,7 @@ Rails.application.routes.draw do
 
   resource :index, only: [:index]
 
-  resource :auth, only: [] do
-    get :callback, on: :member
-  end
+  get '/auth/:provider/callback', to: 'auth#callback'
 
   namespace :api do
     resources :users, only: [:index, :create]

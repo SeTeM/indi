@@ -31,6 +31,7 @@ gem 'omniauth-google-oauth2'
 # gem 'bcrypt'
 
 gem 'puma'
+gem 'awesome_print'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -50,4 +51,5 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'fuubar'
+  gem 'quiet_assets'
 end

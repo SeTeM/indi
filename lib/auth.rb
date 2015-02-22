@@ -9,13 +9,13 @@ module Auth
     def login(user)
       if user
         @current_user = user
-        cookies.permanent[:api_token] = user.api_token
+        cookies.permanent[:token] = user.token
       end
     end
 
     def logout
       if logged_in?
-        regenerate_api_token(current_user)
+        regenerate_token(current_user)
         @current_user = nil
       end
     end
@@ -45,15 +45,15 @@ module Auth
     protected
 
     def login_from_api_token
-      User.where(api_token: api_token).first
+      User.where(token: token).first
     end
 
-    def api_token
-      params[:token] || cookies[:api_token]
+    def token
+      params[:token] || cookies[:token]
     end
 
-    def regenerate_api_token(user)
-      user.regenerate_api_token!
+    def regenerate_token(user)
+      user.regenerate_token!
     end
   end
 end

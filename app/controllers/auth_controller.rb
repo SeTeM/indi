@@ -4,10 +4,10 @@ class AuthController < ApplicationController
       if user.belongs_to_team?
         login(user)
       else
-        cookie[:flash][:error] = "U r not DI member"
+        cookies[:error] = "U r not DI member"
       end
     else
-      cookie[:flash][:error] = "Error while login"
+      cookies[:error] = "Error while login"
     end
     redirect_to root_path
   end
@@ -19,6 +19,6 @@ class AuthController < ApplicationController
   end
 
   def user
-    @user ||= ExternalUserService.find_or_create(auth_hash)
+    @user ||= ExternalUserService.new(auth_hash).find_or_create
   end
 end
