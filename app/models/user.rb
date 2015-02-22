@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  DI_HOSTS = %w(dreamindustries.co bookmate.com zvooq.ru).freeze
+
   before_validation :assign_token, :extract_login_from_email, on: :create
 
   validates :email, :login, :token, uniqueness: true
@@ -11,7 +13,7 @@ class User < ActiveRecord::Base
   end
 
   def belongs_to_team?
-    %w(dreamindustries.co bookmate.com zvooq.ru).any? do |host|
+    DI_HOSTS.any? do |host|
       email.include?("@#{host}")
     end
   end
