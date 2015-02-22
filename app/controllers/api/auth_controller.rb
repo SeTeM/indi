@@ -1,8 +1,8 @@
-class API::OauthController < API::BaseController
+class API::AuthController < API::BaseController
   skip_before_filter :require_login
 
   def show
-    render json: { url: callback_auth_url(provider) }
+    render json: { url: "/auth/#{provider}" }
   end
 
   private

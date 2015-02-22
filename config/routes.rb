@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :users, only: [:index, :create]
-    resources :oauth, only: [:show]
+    resources :auth, only: [:show]
     resources :sessions, only: [:create] do
       delete :destroy, on: :collection
     end
