@@ -32,6 +32,7 @@ gem 'omniauth-google-oauth2'
 
 gem 'puma'
 gem 'awesome_print'
+gem 'pry-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
