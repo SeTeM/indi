@@ -30,4 +30,12 @@ RSpec.describe User, type: :model do
       expect { subject.regenerate_token! }.to change { subject.token }
     end
   end
+
+  describe "#userpic" do
+    subject { create(:user) }
+    let!(:provider) { create(:provider, user: subject) }
+
+    its(:userpic) { is_expected.to be }
+    its(:userpic) { is_expected.to eq provider.userpic }
+  end
 end

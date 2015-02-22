@@ -18,6 +18,13 @@ class User < ActiveRecord::Base
     end
   end
 
+  def userpic
+    providers.each do |p|
+      return p.userpic if p.userpic
+    end
+    nil
+  end
+
   private
 
   def assign_token
