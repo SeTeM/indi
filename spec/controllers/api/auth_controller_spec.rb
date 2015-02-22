@@ -9,7 +9,7 @@ RSpec.describe API::AuthController, type: :controller do
     it { is_expected.to be_success }
 
     it "returns url" do
-      expect(json[:url]).to match /github/
+      expect(json[:url]).to match /#{provider}/
     end
   end
 end
