@@ -146,6 +146,8 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.1)
       loofah (~> 2.0)
+    rails_config (0.4.2)
+      activesupport (>= 3.0)
     railties (4.2.0)
       actionpack (= 4.2.0)
       activesupport (= 4.2.0)
@@ -237,7 +239,8 @@ DEPENDENCIES
   pry-rails
   puma
   quiet_assets
-  rails (= 4.2.0)
+  rails (~> 4.2.0)
+  rails_config
   rspec-its
   rspec-rails
   sass-rails (~> 5.0)
