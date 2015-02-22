@@ -42,6 +42,12 @@ module Auth
       @current_user
     end
 
+    def validate_cookies_token
+      if cookies[:token]
+        cookies.delete(:token) unless User.where(token: cookies[:token]).exists?
+      end
+    end
+
     protected
 
     def login_from_api_token
