@@ -29,5 +29,9 @@ module Extractor
     def uid
       auth[:uid]
     end
+
+    def image
+      auth[:info][:image]
+    end
   end
 end

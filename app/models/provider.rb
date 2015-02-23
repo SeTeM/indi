@@ -4,6 +4,6 @@ class Provider < ActiveRecord::Base
   serialize :raw, Hash
 
   def userpic
-    raw['info']['image']
+    Extractor::Base.load(raw.to_h).image
   end
 end
