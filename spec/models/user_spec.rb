@@ -11,12 +11,6 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe "#extract_login_from_email" do
-    before { subject.save }
-
-    its(:login) { is_expected.to eq("vlad") }
-  end
-
   describe "#regenerate_token!" do
     before { subject.save }
 

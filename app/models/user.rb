@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  before_validation :assign_token, :extract_login_from_email, on: :create
+  before_validation :assign_token, on: :create
 
   validates :email, :login, :token, uniqueness: true
 
@@ -21,9 +21,5 @@ class User < ActiveRecord::Base
 
   def assign_token
     self.token = SecureRandom.hex(10)
-  end
-
-  def extract_login_from_email
-    self.login ||= email.split("@")[0].downcase
   end
 end

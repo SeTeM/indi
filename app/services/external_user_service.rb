@@ -34,7 +34,8 @@ class ExternalUserService
   def create_user
     @user = User.create!(
       name: extractor.name,
-      email: extractor.email
+      email: extractor.email,
+      login: extractor.nickname
     )
   end
 end

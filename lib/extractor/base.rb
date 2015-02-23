@@ -33,5 +33,9 @@ module Extractor
     def image
       auth[:info][:image]
     end
+
+    def nickname
+      email.split("@")[0].downcase
+    end
   end
 end
