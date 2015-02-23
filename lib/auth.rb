@@ -9,7 +9,7 @@ module Auth
     def login(user)
       if user
         @current_user = user
-        cookies.permanent[:token] = user.token
+        cookies[:token] = { value: user.token, expires: 2.months.from_now }
       end
     end
 
