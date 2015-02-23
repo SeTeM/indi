@@ -1,6 +1,4 @@
 class ExternalUserService
-  attr_reader :extractor, :user, :provider
-
   def initialize(auth)
     @extractor = Extractor::Base.load(auth)
   end
@@ -12,8 +10,13 @@ class ExternalUserService
 
   private
 
+  attr_reader :extractor, :user, :provider
+
   def find
-    @provider = Provider.where(uid: extractor.uid).first
+    @provider = Provider.where(
+      title: extractor.provider,
+      uid: extractor.uid
+    ).first
     @user = provider.user if provider
   end
 

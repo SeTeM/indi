@@ -11,8 +11,8 @@ class User < ActiveRecord::Base
   end
 
   def userpic
-    providers.each do |p|
-      return p.userpic if p.userpic
+    providers.each do |provider|
+      return provider.userpic if provider.userpic
     end
     nil
   end
