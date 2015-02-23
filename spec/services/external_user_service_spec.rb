@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ExternalUserService, type: :model do
-  let(:auth) { OmniAuth.config.mock_auth[:di] }
+  let(:auth) { OmniAuth.config.mock_auth[:google] }
   let(:service) { described_class.new(auth) }
 
   describe "#find_or_create" do

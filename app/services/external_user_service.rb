@@ -1,8 +1,8 @@
 class ExternalUserService
-  attr_reader :auth_hash, :user, :provider
+  attr_reader :extractor, :user, :provider
 
-  def initialize(auth_hash)
-    @auth_hash = auth_hash.with_indifferent_access
+  def initialize(auth)
+    @extractor = Extractor::Base.load(auth)
   end
 
   def find_or_create
@@ -13,7 +13,7 @@ class ExternalUserService
   private
 
   def find
-    @provider = Provider.where(uid: auth_hash[:uid]).first
+    @provider = Provider.where(uid: extractor.uid).first
     @user = provider.user if provider
   end
 
@@ -25,16 +25,16 @@ class ExternalUserService
   def create_provider
     @provider = Provider.create!(
       user_id: user.id,
-      title: auth_hash[:provider],
-      uid: auth_hash[:uid],
-      raw: auth_hash
+      title: extractor.provider,
+      uid: extractor.uid,
+      raw: extractor.auth
     )
   end
 
   def create_user
     @user = User.create!(
-      name: auth_hash[:info][:name],
-      email: auth_hash[:info][:email]
+      name: extractor.name,
+      email: extractor.email
     )
   end
 end

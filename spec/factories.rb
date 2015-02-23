@@ -9,6 +9,6 @@ FactoryGirl.define do
     title { raw['provider'] }
     user
     uid { raw['uid'] }
-    raw { OmniAuth.config.mock_auth[:di] }
+    raw { OmniAuth.config.mock_auth[:google] }
   end
 end

@@ -5,10 +5,10 @@ RSpec.describe AuthController, type: :controller do
     let(:user) { create(:user) }
     let(:external_service) { double("ExternalUserService", find_or_create: user) }
 
-    subject { get :callback, provider: 'google_oauth2' }
+    subject { get :callback, provider: 'google' }
 
     before do
-      request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:di]
+      request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:google]
       allow(UserPolicy).to receive(:new).and_return(policy)
       allow(ExternalUserService).to receive(:new).and_return(external_service)
     end

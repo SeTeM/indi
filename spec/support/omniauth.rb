@@ -1,7 +1,7 @@
 OmniAuth.config.test_mode = true
 
 OmniAuth.config.mock_auth[:default] = OmniAuth::AuthHash.new({
-  provider: 'google_oauth2',
+  provider: 'google',
   uid: '123545',
   info: {
     name: "Vlad Syabruk",
@@ -14,5 +14,4 @@ OmniAuth.config.mock_auth[:default] = OmniAuth::AuthHash.new({
     expires: true
   }
 })
-OmniAuth.config.add_mock(:di, { info: { email: 'vlad@bookmate.com' } } )
-OmniAuth.config.add_mock(:not_di, { info: { email: 'vlad@yandex.ru' } } )
+OmniAuth.config.add_mock(:google)
