@@ -1,7 +1,7 @@
 class AuthController < ApplicationController
   def callback
     if user
-      if user.belongs_to_team?
+      if belongs_to_team?
         login(user)
       else
         cookies[:error] = "U r not DI member"
@@ -20,5 +20,9 @@ class AuthController < ApplicationController
 
   def user
     @user ||= ExternalUserService.new(auth_hash).find_or_create
+  end
+
+  def belongs_to_team?
+    UserPolicy.new(user).belongs_to_team?
   end
 end

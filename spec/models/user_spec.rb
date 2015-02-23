@@ -11,12 +11,6 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe "#belongs_to_team?" do
-    specify do
-      expect(subject.belongs_to_team?).to be_truthy
-    end
-  end
-
   describe "#extract_login_from_email" do
     before { subject.save }
 

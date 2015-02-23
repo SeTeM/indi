@@ -6,9 +6,9 @@ FactoryGirl.define do
   end
 
   factory :provider do
-    title "github"
+    title { raw['provider'] }
     user
-    sequence(:uid) {|n| "uid-#{n}" }
+    uid { raw['uid'] }
     raw { OmniAuth.config.mock_auth[:di] }
   end
 end
