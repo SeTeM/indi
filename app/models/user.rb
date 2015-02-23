@@ -24,6 +24,6 @@ class User < ActiveRecord::Base
   end
 
   def extract_login_from_email
-    self.login = email.split("@")[0]
+    self.login ||= email.split("@")[0].downcase
   end
 end
