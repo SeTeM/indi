@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'auth#callback'
 
   namespace :api do
-    resources :users, only: [:index, :create]
+    resources :users, only: [:index]
     resources :auth, only: [:show]
-    resources :sessions, only: [:create] do
+    resources :sessions, only: [] do
       delete :destroy, on: :collection
     end
   end
