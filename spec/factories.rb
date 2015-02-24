@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  factory :tag do
+    title "MyString"
+  end
+
   factory :user do
     name "Vlad"
     login { name.downcase }

@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   validates :email, :login, :token, uniqueness: true
 
   has_many :providers, dependent: :destroy
+  has_and_belongs_to_many :tags, dependent: :destroy
 
   def regenerate_token!
     assign_token
