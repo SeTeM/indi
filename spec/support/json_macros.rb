@@ -1,22 +1,11 @@
 module JsonMacros
   def json
-    parsed_body.with_indifferent_access
-  end
-
-  private
-
-  def subject_or_responce
-    if defined?(subject)
-      subject
-    elsif defined?(responce)
-      responce
+    body = if subject.is_a?(ActionController::TestResponse)
+      subject.body
     else
-      fail "It requires subject or responce"
+      response.body
     end
-  end
-
-  def parsed_body
-    JSON.parse(subject_or_responce.body)
+    JSON.parse body, object_class: HashWithIndifferentAccess
   end
 end
 
