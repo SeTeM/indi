@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :users, only: [:index]
+    resources :tags, only: [:index]
     resources :auth, only: [:show]
     resources :sessions, only: [] do
       delete :destroy, on: :collection

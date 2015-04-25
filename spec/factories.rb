@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :tag do
     title "MyString"
+    featuring true
   end
 
   factory :user do

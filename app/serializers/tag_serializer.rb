@@ -1,3 +1,3 @@
 class TagSerializer < ActiveModel::Serializer
-  attributes :title
+  attributes :title, :featuring
 end
