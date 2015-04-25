@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150224174006) do
+ActiveRecord::Schema.define(version: 20150425090536) do
 
   create_table "providers", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -23,10 +23,13 @@ ActiveRecord::Schema.define(version: 20150224174006) do
   add_index "providers", ["uid"], name: "index_providers_on_uid", unique: true
 
   create_table "tags", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",                      null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "featuring",  default: false
   end
+
+  add_index "tags", ["title"], name: "index_tags_on_title", unique: true
 
   create_table "tags_users", id: false, force: :cascade do |t|
     t.integer "user_id", null: false
